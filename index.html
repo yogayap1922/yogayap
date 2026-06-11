@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clipper Profile - @yap5334</title>
+    
+    <!-- === BERGUNA UNTUK MEMASANG LAMBANG/FAVICON DI TAB BROWSER ATAS === -->
+    <link rel="icon" type="image/jpeg" href="https://fast.image.delivery/rhcaeyy.jpg">
+    
+    <!-- PANGGIL FONT AWESOME UNTUK LAMBANG/IKON SOSMED -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            
+            /* BACKGROUND UTAMA WEBSITE KAMU */
+            background: url('https://fast.image.delivery/rhcaeyy.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #464646; 
+        }
+
+        /* === EFEK JARING KOTAK-KOTAK (GRID PATTERN) FULL LAYAR === */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            pointer-events: none;
+            
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+                
+            animation: gridPulse 8s ease-in-out infinite;
+        }
+
+        @keyframes gridPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* === LAMBANG LOGO BESAR DI BELAKANG KARTU === */
+        .bg-logo-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 550px; 
+            height: auto;
+            z-index: 2; 
+            opacity: 0.25; 
+            pointer-events: none;
+        }
+
+        /* Wadah Utama / Card Layout Menyamping (Samping Kiri & Kanan) */
+        .card-container {
+            background-color: rgba(255, 255, 255, 0.85); 
+            backdrop-filter: blur(5px);
+            padding: 35px;
+            width: 100%;
+            max-width: 700px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 3; 
+        }
+
+        /* --- SISI KIRI: PROFIL & LINK --- */
+        .left-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-right: 2px solid rgba(0, 0, 0, 0.4); 
+            padding-right: 20px;
+        }
+
+        /* Foto Profil Bulat TikTok */
+        .profile-pic {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #222;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        /* Tombol TikTok Sisi Kiri */
+        .btn-tiktok {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 25px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 50px;
+            background-color: #010101;
+            width: 100%;
+            max-width: 200px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-tiktok:hover {
+            transform: scale(1.05);
+        }
+
+        /* --- SISI KANAN: KATA-KATA & AJAKAN --- */
+        .right-side {
+            flex: 1.5;
+            text-align: left;
+        }
+
+        .tagline {
+            background-color: #fe2c55;
+            color: white;
+            display: inline-block;
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .main-text {
+            color: #111;
+            font-size: 24px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        .sub-text {
+            color: #444;
+            font-size: 15px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .cta-box {
+            background: rgba(255, 255, 255, 0.6);
+            padding: 12px 15px;
+            border-radius: 10px;
+            border-left: 4px solid #fe2c55;
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Sembunyikan ikon panah atas secara default (hanya muncul di HP) */
+        .panah-atas { display: none; }
+        .panah-kiri { inline-block; }
+
+        /* RESPONSIF: Kalau dibuka di HP otomatis jadi atas-bawah */
+        @media (max-width: 600px) {
+            .card-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+                padding: 25px 20px;
+            }
+            .left-side {
+                border-right: none;
+                border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+                padding-right: 0;
+                padding-bottom: 25px;
+                width: 100%;
+            }
+            .right-side {
+                text-align: center;
+            }
+            .cta-box {
+                border-left: none;
+                border-top: 4px solid #fe2c55;
+            }
+            .bg-logo-center {
+                max-width: 320px; /* Logo disesuaikan biar pas di layar HP */
+            }
+            /* Tukar ikon panah di HP */
+            .panah-kiri { display: none; }
+            .panah-atas { display: inline-block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LAYER JARING KOTAK-KOTAK FULL SCREEN -->
+    <div class="grid-overlay"></div>
+
+    <!-- LAMBANG LOGO BESAR DI TENGAH/BELAKANG CARD -->
+    <img src="https://fast.image.delivery/rhcaeyy.jpg" alt="Logo Besar" class="bg-logo-center">
+
+    <div class="card-container">
+        
+        <!-- SISI KIRI: FOTO PROFIL & LINK ACC TIKTOK -->
+        <div class="left-side">
+            <img src="https://fast.image.delivery/rhcaeyy.jpg" alt="PP TikTok" class="profile-pic">
+            
+            <h2>@yap5334</h2>
+            
+            <a href="https://www.tiktok.com/@yap5334?is_from_webapp=1&sender_device=pc" target="_blank" class="btn-tiktok">
+                <i class="fab fa-tiktok"></i> Kunjungi TikTok
+            </a>
+        </div>
+
+        <!-- SISI KANAN: KATA-KATA & AJAKAN NONTON -->
+        <div class="right-side">
+            <span class="tagline">Edukasi • Berita • Viral</span>
+            
+            <div class="main-text">Biar Nggak Ketinggalan Info Yang Lagi Rame! </div>
+        
+            <p class="sub-text">
+                Halo bro! Selamat datang ya. Di sini tempatnya kamu bisa santai sambil update berbagai berita paling baru, klip yang lagi viral, dan video edukasi seru. Semua videonya dikemas singkat, padat, dan seru biar kamu langsung paham tanpa ribet.
+            </p>
+            
+            <div class="cta-box">
+                <!-- Panah kiri muncul di PC, Panah atas muncul di HP -->
+                <i class="fas fa-arrow-alt-circle-left panah-kiri" style="color: #fe2c55; margin-right: 5px;"></i> 
+                <i class="fas fa-arrow-alt-circle-up panah-atas" style="color: #fe2c55; margin-right: 5px;"></i> 
+                Yuk, langsung klik tombol <b>"Kunjungi TikTok"</b> dan tonton video klip terbaru hari ini!
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+</html>
